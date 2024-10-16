@@ -1,15 +1,41 @@
-import { Canvas } from '@react-three/fiber'
+import { act, Canvas } from '@react-three/fiber'
 import { Leva } from 'leva'
-import React from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { ACESFilmicToneMapping, SRGBColorSpace } from 'three'
 import { Scene } from './Scene'
 import './styles/main.css'
+import Osc1 from './components/Osc1'
+import Filter from './components/Filter'
+import Store, { CTX } from './context/Store'
+import Key from './components/Key'
+import Adsr from './components/Adsr'
 
+
+export type fltSet ={
+  frequency:number,
+  detune:number,
+  type:BiquadFilterType,
+  Q : number,
+  gain : number
+}
 function Main() {
+  const startingFrequency = 65.41;
+  const keys =  Array(8).fill(0).map((item,index)=>startingFrequency+(startingFrequency/7)*index)
+
+  const [appState,updateState]=useContext(CTX)
   return (
     <div className='main'>
-      <Leva
+      
+
+        
+        <a href='https://francois.crouy-chanel.fr' className='github'>
+          <img  src='/Images/github-mark-white.png'/>
+        </a>
+
+      <a className="portfolio" href='https://francois.crouy-chanel.fr'>francois.crouy-chanel.fr</a>
+     <Leva
+      hidden
         collapsed={false}
         oneLineLabels={false}
         flat={true}
@@ -44,7 +70,9 @@ function Main() {
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>
+ 
+    <Store>
+      <Main/>
+    </Store>
+
 )
