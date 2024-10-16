@@ -28,17 +28,14 @@ type GLTFResult = GLTF & {
     Cylinder007_1: THREE.Mesh
     Highpass_Slider: THREE.Mesh
     LFO_Destination_Slider: THREE.Mesh
-    Cylinder007: THREE.Mesh
-    Cylinder007_1: THREE.Mesh
+
     LFO_led: THREE.Mesh
-    Cylinder007: THREE.Mesh
-    Cylinder007_1: THREE.Mesh
+
     LFO_SawTooth: THREE.Mesh
     LFO_Sin_Freq: THREE.Mesh
     LFO_Square: THREE.Mesh
     LFO_Triangle: THREE.Mesh
-    Cylinder007: THREE.Mesh
-    Cylinder007_1: THREE.Mesh
+
     Lowpass_Slider: THREE.Mesh
     Realease_Slider: THREE.Mesh
     SawTooth: THREE.Mesh

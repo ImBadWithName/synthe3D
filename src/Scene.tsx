@@ -61,6 +61,7 @@ function Scene() {
 
         <Synte position={[0,1.5,0]}
           onPointerDown={()=>setCameraControlEnabled(false)}
+          
           // onPointerMissed={()=>setCameraControlEnabled(true)}
           // onPoi
         />

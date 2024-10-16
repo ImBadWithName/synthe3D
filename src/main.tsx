@@ -29,7 +29,7 @@ function Main() {
       
 
         
-        <a href='https://francois.crouy-chanel.fr' className='github'>
+        <a href='https://github.com/ImBadWithName/synthe3D' className='github'>
           <img  src='/Images/github-mark-white.png'/>
         </a>
 

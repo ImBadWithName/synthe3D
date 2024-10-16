@@ -62,7 +62,7 @@ const drawOnde = ()=>{
   if(ctx){
     analyser.getByteTimeDomainData(dataArray);
     ctx.lineWidth = 2;
-    ctx.strokeStyle = primeryColor;
+    ctx.strokeStyle = primeryColor.toHex8String();
     ctx.beginPath();
     const sliceWidth = canvas.width / bufferLength;
     let x = 0;
@@ -76,9 +76,10 @@ const drawOnde = ()=>{
       }
       x += sliceWidth;
     }
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke()
   }
-  ctx.lineTo(canvas.width, canvas.height / 2);
-  ctx.stroke()
+
 }
 const drawFreq = ()=>{
   if(ctx){
